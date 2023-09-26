@@ -14,6 +14,7 @@ sudo apt install git -y
 
 # Install Chrome
 echo "Installing Google Chrome..."
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt -f install -y
 
@@ -30,7 +31,7 @@ sudo apt install zsh -y
 chsh -s $(which zsh)
 
 echo "Installing Oh My Zsh..."
-curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 # Install EXA and alias ls to exa
 echo "Installing EXA..."
@@ -62,7 +63,7 @@ sudo apt install nodejs -y
 
 # Install GCC
 echo "Installing GCC..."
-sudo apt install gcc gcc-c++ -y
+sudo apt install build-essential -y
 
 # Install Visual Studio Code (VSCode)
 echo "Installing Visual Studio Code..."
