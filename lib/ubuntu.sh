@@ -59,7 +59,20 @@ sudo apt install golang -y
 
 # Install Node.js
 echo "Installing Node.js..."
-sudo apt install nodejs -y
+sudo apt install nodejs npm -y
+sudo npm install -g corepack
+sudo npm install -g n
+sudo n stable
+corepack enable
+corepack prepare yarn@stable --activate
+
+# Install Android Studio
+sudo apt install openjdk-11-jdk
+sudo snap install android-studio --classic
+
+# Install Flutter
+sudo snap install flutter --classic
+flutter doctor
 
 # Install GCC
 echo "Installing GCC..."
@@ -72,5 +85,14 @@ sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt update
 sudo apt install code -y
+
+# Install mailspring
+sudo snap install mailspring
+
+# Install Notion
+echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list
+sudo apt update
+sudo apt install notion-app-enhanced -y
+sudo apt install notion-app -y
 
 echo "All Done! Please restart your terminal or source your .zshrc file."

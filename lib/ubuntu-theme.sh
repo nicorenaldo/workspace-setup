@@ -26,8 +26,8 @@ mv fonts/ ~/.local/share/fonts/
 dconf load /org/gnome/shell/extensions/< all_extension_settings.conf
 
 # Conky (Theme at Desktop)
- sudo apt install conky-all curl jq moc -y
- mkdir ~/.config/conky
+sudo apt install conky-all curl jq moc -y
+mkdir ~/.config/conky
 cp -r ./conky_config/Graffias/ ~/.config/conky/
 chmod +x conky_config/start_conky.desktop
 cp conky_config/start_conky.desktop ~/.config/autostart
